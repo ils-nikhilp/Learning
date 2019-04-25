@@ -1,0 +1,42 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="left-image col-md-6">
+			  <div class="overlay tag-line text-center">
+			     <span class="show-element img-font">WELCOME BACK!</span><br>
+			     <span class="show-element img-font">STATBLISS</span><br><br>
+			     <span class="show-element">Please login into your account</span>
+			  </div>
+		</div>
+		<div class="col-xs-12 col-md-6 padding-left-right-0">
+			<div class="right-form-center">
+				<form class="" [formGroup]="loginForm" (ngSubmit)="submitData()">
+					  <div formGroupName="userData">
+						  <div class="text-center">
+						      	<img class="img-responsive mb-4 login-logo" src="assets/images/login-logo.png" alt="">
+						  </div>
+
+							<mat-form-field >
+									<input matInput placeholder="Email" formControlName="email">
+									<mat-error *ngIf="!loginForm.get('userData.email').valid && loginForm.get('userData.email').touched">Please enter the valid email!</mat-error>
+							</mat-form-field>
+
+							<mat-form-field class="col-xs-12">
+								<input matInput placeholder="Password" formControlName="password">
+								<mat-error *ngIf="!loginForm.get('userData.password').valid && loginForm.get('userData.password').touched">Please enter the password!</mat-error>
+							</mat-form-field>
+							<br>
+							
+							<br>
+							<button class="login_button" mat-button color="primary" type="submit" [disabled]="!loginForm.get('userData').valid">
+								Submit
+								<img src="assets/images/login-arrow.png"/>
+							</button>
+							
+					 </div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
