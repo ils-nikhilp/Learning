@@ -1,10 +1,10 @@
 
 ---
 applications:
-- name: dev-statbliss-sample-green
+- name: stg-statbliss-sample-green
   memory: 128M
   instances: 1
-  host: devstabliss
+  host: stgstabliss
   path: dist/finn-data-sample
   random-route: true
   buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
